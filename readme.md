@@ -1,14 +1,11 @@
 ## md-yaml-json
----
 Parse Markdown files with YAML front matter to JSON in Node.JS
 
 ### Install
----
 ```
 npm i -D md-yaml-json
 ```
 ### Usage
----
 ```js
 // ES2015 Modules
 import parser from 'md-yaml-json';
@@ -47,7 +44,6 @@ console.log(JSON.stringify(parsedFile, null, 2));
 
 ```
 ### License
----
 MIT License
 
 Copyright (c) 2016 Siddharth Jain
