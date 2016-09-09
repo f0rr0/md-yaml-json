@@ -1,31 +1,31 @@
-## md2json
+## md-yaml-json
 ---
 Parse Markdown files with YAML front matter to JSON in Node.JS
 
 ### Install
 ---
 ```
-npm i -D md2json
+npm i -D md-yaml-json
 ```
 ### Usage
 ---
 ```js
 // ES2015 Modules
-import mdjson from 'md2json';
-import { processFile as parseToJSON } from 'md2json';
+import parser from 'md-yaml-json';
+import { processFile as parseToJSON } from 'md-yaml-json';
 
 // commonjs
-const mdjson = require('mdjson').default;
-const parseToJSON = require('mdjson').processFile;
+const parser = require('md-yaml-json').default;
+const parseToJSON = require('md-yaml-json').processFile;
 
 // ES2015 destructuring assignment
-const { default:mdjson, processFile:parseToJSON } = require('mdjson');
+const { default:parser, processFile:parseToJSON } = require('md-yaml-json');
 
 // Use absolute paths
 const { resolve } = require('path');
 
 // Parse a directory of markdown files
-const parsedDir = mdjson(resolve(__dirname, './path/to/md/dir'));
+const parsedDir = parser(resolve(__dirname, './path/to/md/dir'));
 
 // Parse a single file
 const parsedFile = parseToJSON(resolve(__dirname, './path/to/md/file'));

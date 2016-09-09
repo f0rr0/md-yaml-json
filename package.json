@@ -1,19 +1,19 @@
 {
-  "name": "md2json",
+  "name": "md-yaml-json",
   "version": "1.0.0",
   "description": "Parse Markdown files to JSON",
-  "main": "./dist/md2json.js",
+  "main": "./dist/md-yaml-json.js",
   "scripts": {
     "clean": "rm -rf ./dist",
     "build": "npm run clean && $(npm bin)/webpack --env.prod --optimize-dedupe",
-    "postbuild": "$(npm bin)/uglifyjs ./dist/md2json.js -o ./dist/md2json.js --source-map ./dist/md2json.js.map --source-map-root ./src/main.js --in-source-map ./dist/md2json.js.map --screw-ie8 -c -m",
+    "postbuild": "$(npm bin)/uglifyjs ./dist/md-yaml-json.js -o ./dist/md-yaml-json.js --source-map ./dist/md-yaml-json.js.map --source-map-root ./src/main.js --in-source-map ./dist/md-yaml-json.js.map --screw-ie8 -c -m",
     "watch": "npm run clean && $(npm bin)/webpack --watch --verbose",
     "prepublish": "npm run build",
     "test": "node ./test/script.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/f0rr0/md2json.git"
+    "url": "git+https://github.com/f0rr0/md-yaml-json.git"
   },
   "keywords": [
     "markdown",
@@ -24,9 +24,9 @@
   "author": "Sid Jain",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/f0rr0/md2json/issues"
+    "url": "https://github.com/f0rr0/md-yaml-json/issues"
   },
-  "homepage": "https://github.com/f0rr0/md2json#readme",
+  "homepage": "https://github.com/f0rr0/md-yaml-json#readme",
   "dependencies": {
     "marked": "^0.3.6",
     "yaml-front-matter": "^3.4.0"
