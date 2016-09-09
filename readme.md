@@ -1,18 +1,18 @@
-## mdjson
+## md2json
 ---
 Parse Markdown files with YAML front matter to JSON in Node.JS
 
 ### Install
 ---
 ```
-npm i -D mdjson
+npm i -D md2json
 ```
 ### Usage
 ---
 ```js
 // ES2015 Modules
-import mdjson from 'mdjson';
-import { processFile as parseToJSON } from 'mdjson';
+import mdjson from 'md2json';
+import { processFile as parseToJSON } from 'md2json';
 
 // commonjs
 const mdjson = require('mdjson').default;

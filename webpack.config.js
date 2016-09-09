@@ -12,7 +12,7 @@ Object
 module.exports = (env = { dev: true }) => ({
   context: resolve(__dirname, './src'),
   entry: {
-    mdjson: './main.js'
+    md2json: './main.js'
   },
   target: "node",
   output: {
@@ -20,7 +20,7 @@ module.exports = (env = { dev: true }) => ({
     path: resolve(__dirname, './dist'),
     pathInfo: !env.prod,
     libraryTarget: 'commonjs2',
-    library: "mdjson"
+    library: "md2json"
   },
   devtool: env.prod ? 'source-map' : 'eval',
   externals: nodeModules
