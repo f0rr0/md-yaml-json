@@ -1,0 +1,42 @@
+{
+  "name": "mdjson",
+  "version": "1.0.0",
+  "description": "Parse Markdown files to JSON",
+  "main": "./dist/mdjson.js",
+  "scripts": {
+    "clean": "rm -rf ./dist",
+    "build": "npm run clean && $(npm bin)/webpack --env.prod --optimize-dedupe",
+    "postbuild": "$(npm bin)/uglifyjs ./dist/mdjson.js -o ./dist/mdjson.js --source-map ./dist/mdjson.js.map --source-map-root ./src/main.js --in-source-map ./dist/mdjson.js.map --screw-ie8 -c -m",
+    "watch": "npm run clean && $(npm bin)/webpack --watch --verbose",
+    "prepublish": "npm run build",
+    "test": "node ./test/script.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/f0rr0/mdjson.git"
+  },
+  "keywords": [
+    "markdown",
+    "json",
+    "yaml",
+    "frontmatter"
+  ],
+  "author": "Sid Jain",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/f0rr0/mdjson/issues"
+  },
+  "homepage": "https://github.com/f0rr0/mdjson#readme",
+  "dependencies": {
+    "marked": "^0.3.6",
+    "yaml-front-matter": "^3.4.0"
+  },
+  "devDependencies": {
+    "uglify-js": "git://github.com/mishoo/UglifyJS2.git#harmony",
+    "webpack": "^2.1.0-beta.22"
+  },
+  "engines": {
+    "node": ">=6.0.0",
+    "npm": ">=3.8.6"
+  }
+}
