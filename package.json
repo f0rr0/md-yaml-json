@@ -1,6 +1,6 @@
 {
   "name": "md-yaml-json",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Parse Markdown files to JSON",
   "main": "./dist/md-yaml-json.js",
   "scripts": {
