@@ -28,7 +28,10 @@
   },
   "homepage": "https://github.com/f0rr0/md-yaml-json#readme",
   "dependencies": {
-    "marked": "^0.3.6",
+    "markdown-it": "^8.0.0",
+    "markdown-it-attrs": "^0.7.1",
+    "markdown-it-emoji": "^1.2.0",
+    "markdown-it-implicit-figures": "^0.3.2",
     "yaml-front-matter": "^3.4.0"
   },
   "devDependencies": {

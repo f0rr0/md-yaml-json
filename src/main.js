@@ -2,7 +2,21 @@ import { readdirSync, readFileSync, statSync } from 'fs';
 import { inspect } from 'util';
 import { basename, extname } from 'path';
 import { loadFront as fm } from 'yaml-front-matter';
-import marked from 'marked';
+import markdownIt from 'markdown-it';
+
+const md = markdownIt({
+  html: true,
+  linkify: true
+}).use(require('markdown-it-emoji'))
+  .use(require('markdown-it-implicit-figures'), {
+    figcaption: true
+  })
+  .use(require('markdown-it-attrs'));
+
+md.linkify.tlds('onion', true);
+md.linkify.add('git:', 'http:');
+md.linkify.add('ftp:', null);
+md.set({ fuzzyIP: true });
 
 export const __esModule = true;
 
@@ -10,10 +24,10 @@ export function processFile(file, opts={}) {
   const source = readFileSync(file);
   const stats = statSync(file);
   const meta = fm(source);
-  meta.stub = basename(file, extname(file)); // filename to stub
+  meta.path = file; // filename
   meta.mtime = new Date(inspect(stats.mtime)); // unix mtime to ISO
   meta.birthtime = new Date(inspect(stats.birthtime)) // unix birthtime to ISO
-  const html = marked(meta.__content, opts);
+  const html = opts.parser ? opts.parser.render(meta.__content) : md.render(meta.__content);
   delete meta.__content;
   return {
     meta,
