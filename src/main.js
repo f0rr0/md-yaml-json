@@ -6,7 +6,8 @@ import markdownIt from 'markdown-it';
 
 const md = markdownIt({
   html: true,
-  linkify: true
+  linkify: true,
+  typographer: true
 }).use(require('markdown-it-emoji'))
   .use(require('markdown-it-implicit-figures'), {
     figcaption: true
