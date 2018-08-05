@@ -1,4 +1,7 @@
 ## md-yaml-json
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/f0rr0/md-yaml-json.svg)](https://greenkeeper.io/)
+
 Parse Markdown files with YAML front matter to JSON in Node.JS
 
 ### Install
